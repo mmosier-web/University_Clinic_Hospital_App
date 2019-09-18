@@ -28,5 +28,12 @@ namespace University_Clinic_Hospital_App
         {
             return 0;
         }
+
+        public virtual void ShowInfo()
+        {
+            Console.WriteLine($"Name: {Name} | Employee Number: {EmployeeNumber} | Salary: {Salary} | GotPaid: {GotPaid}");
+            Console.WriteLine("___________________________________________________________________________________________________________________");
+
+        }
     }
 }
