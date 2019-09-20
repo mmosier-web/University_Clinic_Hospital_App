@@ -54,12 +54,32 @@ namespace University_Clinic_Hospital_App
             }
         }
 
-        public void PayAllEmployees()
+        public int PayAllEmployees()
         {
             foreach (Employee employee in employeeList)
             {
-                employee.PayEmployee();
+                int GotPaid = employee.GotPaid;
+
+                if (GotPaid == 0)
+                { //int GotPaid;
+                    return employee.PayEmployee(/*GotPaid*/);
+                    //int GotPaid = employee.PayEmployee();
+                }
+                else if (GotPaid == 1)
+                {
+                    return 2;
+                }
+            }
+            return 2;
+        }
+
+        public void CheckPayStatus()
+        {
+            foreach(Employee employee in employeeList)
+            {
+
             }
         }
+
     }
 }

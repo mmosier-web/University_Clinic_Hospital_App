@@ -14,16 +14,16 @@ namespace University_Clinic_Hospital_App
         public override void ShowInfo()
         {
 
-            if (GotPaid == false && FloorSweeping == false)
+            if (GotPaid == 0 && FloorSweeping == false)
                 Console.WriteLine($"{ Name }, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, Has swept the floor");
 
-            else if (GotPaid == true && FloorSweeping == true)
+            else if (GotPaid == 1 && FloorSweeping == true)
                 Console.WriteLine($"{ Name }, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has been paid, is sweping the floor");
 
-            else if (GotPaid == true && FloorSweeping == false)
+            else if (GotPaid == 1 && FloorSweeping == false)
                 Console.WriteLine($"{ Name }, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has been paid, Has swept the floor");
 
-            else if (GotPaid == false && FloorSweeping == true)
+            else if (GotPaid == 0 && FloorSweeping == true)
                 Console.WriteLine($"{ Name }, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, is sweping the floor");
         }
     }

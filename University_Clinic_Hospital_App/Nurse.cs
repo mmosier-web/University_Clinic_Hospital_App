@@ -15,7 +15,7 @@ namespace University_Clinic_Hospital_App
         public override void ShowInfo()
         {
 
-            if (GotPaid == true)
+            if (GotPaid == 0)
                 Console.WriteLine($"{ Name} Employee Number: {EmployeeNumber} Employee Salary:{Salary}, number of patients:{NumberOfPatients}, Has been paid");
 
             else

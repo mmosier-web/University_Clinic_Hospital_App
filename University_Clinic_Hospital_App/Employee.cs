@@ -9,14 +9,14 @@ namespace University_Clinic_Hospital_App
         public string Name;
         public string EmployeeNumber;
         public int Salary;
-        public bool GotPaid;
+        public int GotPaid;
 
         public Employee(string name, string employeeNumber, int salary)
         {
             Name = name;
             EmployeeNumber = employeeNumber;
             Salary = salary;
-            GotPaid = false;
+            GotPaid = 0;
         }
 
         public Employee()
@@ -24,9 +24,16 @@ namespace University_Clinic_Hospital_App
 
         }
 
-        public virtual bool PayEmployee()
+        public virtual int PayEmployee(/*int GotPaid*/)
         {
-            return GotPaid = true;
+            if (GotPaid == 0)
+            {
+               return GotPaid = 1;
+            }
+            else
+            {
+                return GotPaid = 2;
+            }
         }
 
         public virtual void ShowInfo()

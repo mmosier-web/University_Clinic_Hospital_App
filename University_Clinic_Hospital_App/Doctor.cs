@@ -20,7 +20,7 @@ namespace University_Clinic_Hospital_App
         public override void ShowInfo()
         {
 
-            if (GotPaid == false) 
+            if (GotPaid == 0) 
             Console.WriteLine($"{ Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has not been paid yet");
 
             else

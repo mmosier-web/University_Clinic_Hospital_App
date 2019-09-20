@@ -15,16 +15,16 @@ namespace University_Clinic_Hospital_App
         public override void ShowInfo()
         {
   
-           if (GotPaid == false && OnThePhone ==false)
+           if (GotPaid == 0 && OnThePhone ==false)
                 Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, is not on the phone");
 
-           else if(GotPaid == true && OnThePhone == true)
+           else if(GotPaid == 1 && OnThePhone == true)
                 Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary} ,Has been paid, is on the phone");
 
-           else if(GotPaid == false && OnThePhone == true)
+           else if(GotPaid == 0 && OnThePhone == true)
                 Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, is on the phone");
 
-           else if (GotPaid == true && OnThePhone == false)
+           else if (GotPaid == 1 && OnThePhone == false)
                 Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has been paid, is not on the phone");
 
         }
