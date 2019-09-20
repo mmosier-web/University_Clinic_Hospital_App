@@ -8,7 +8,7 @@ namespace University_Clinic_Hospital_App
     {
         public string Specialty;
 
-        public Doctor(string name, int employeeNumber, int salary, string specialty): base ( name, employeeNumber, salary)
+        public Doctor(string name, string employeeNumber, int salary, string specialty): base ( name, employeeNumber, salary)
         {
             Specialty = specialty;
         }
@@ -19,11 +19,12 @@ namespace University_Clinic_Hospital_App
         }
         public override void ShowInfo()
         {
-            Console.WriteLine($"{ Name} {EmployeeNumber} {Salary} {Specialty}");
-            if (GotPaid == false) 
-            Console.WriteLine("Has not been paid yet");
 
+            if (GotPaid == false) 
+            Console.WriteLine($"{ Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has not been paid yet");
+
+            else
+                Console.WriteLine($"{ Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has been paid");
         }
-        
     }
 }

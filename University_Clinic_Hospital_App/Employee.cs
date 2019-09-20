@@ -7,11 +7,11 @@ namespace University_Clinic_Hospital_App
     public class Employee
     {
         public string Name;
-        public int EmployeeNumber;
+        public string EmployeeNumber;
         public int Salary;
         public bool GotPaid;
 
-        public Employee(string name, int employeeNumber, int salary)
+        public Employee(string name, string employeeNumber, int salary)
         {
             Name = name;
             EmployeeNumber = employeeNumber;
@@ -24,9 +24,9 @@ namespace University_Clinic_Hospital_App
 
         }
 
-        public int PayEmployee()
+        public virtual bool PayEmployee()
         {
-            return 0;
+            return GotPaid = true;
         }
 
         public virtual void ShowInfo()

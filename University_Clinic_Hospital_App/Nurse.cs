@@ -8,13 +8,18 @@ namespace University_Clinic_Hospital_App
     {
         public int NumberOfPatients { get; set; }
 
-        public Nurse (string name, int employeeNumber, int salary) : base(name, employeeNumber, salary)
+        public Nurse (string name, string employeeNumber, int salary) : base(name, employeeNumber, salary)
         {
             NumberOfPatients = 2;
         }
         public override void ShowInfo()
         {
-            Console.WriteLine($"{ Name} {EmployeeNumber} {Salary} {GotPaid} {NumberOfPatients}");
+
+            if (GotPaid == true)
+                Console.WriteLine($"{ Name} Employee Number: {EmployeeNumber} Employee Salary:{Salary}, number of patients:{NumberOfPatients}, Has been paid");
+
+            else
+                Console.WriteLine($"{ Name} Employee Number: {EmployeeNumber} Employee Salary:{Salary}, number of patients:{NumberOfPatients}, Has not been paid");
         }
     }
 }
