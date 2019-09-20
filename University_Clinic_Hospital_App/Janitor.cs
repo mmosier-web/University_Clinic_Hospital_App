@@ -11,5 +11,21 @@ namespace University_Clinic_Hospital_App
         {
             FloorSweeping = true;
         }
+        public override void ShowInfo()
+        {
+
+            if (GotPaid == false)
+            Console.WriteLine($"{ Name } {EmployeeNumber} {Salary} Has not been paid ");
+            else
+                Console.WriteLine($"{ Name } {EmployeeNumber} {Salary} Has been paid");
+
+            if (FloorSweeping == true)
+                Console.WriteLine($"{ Name } {EmployeeNumber} {Salary} Has swept the floor");
+            else
+                Console.WriteLine($"{ Name } {EmployeeNumber} {Salary} Has not swept the floor");
+
+
+
+        }
     }
 }

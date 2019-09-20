@@ -12,5 +12,10 @@ namespace University_Clinic_Hospital_App
         {
             OnThePhone = false;
         }
+        public override void ShowInfo()
+        {
+            Console.WriteLine($"{ Name} {EmployeeNumber} {Salary} {GotPaid} {OnThePhone}");
+            
+        }
     }
 }

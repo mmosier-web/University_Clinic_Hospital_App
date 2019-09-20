@@ -17,5 +17,13 @@ namespace University_Clinic_Hospital_App
         {
 
         }
+        public override void ShowInfo()
+        {
+            Console.WriteLine($"{ Name} {EmployeeNumber} {Salary} {Specialty}");
+            if (GotPaid == false) 
+            Console.WriteLine("Has not been paid yet");
+
+        }
+        
     }
 }

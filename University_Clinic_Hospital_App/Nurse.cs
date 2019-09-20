@@ -11,7 +11,10 @@ namespace University_Clinic_Hospital_App
         public Nurse (string name, int employeeNumber, int salary) : base(name, employeeNumber, salary)
         {
             NumberOfPatients = 2;
-
+        }
+        public override void ShowInfo()
+        {
+            Console.WriteLine($"{ Name} {EmployeeNumber} {Salary} {GotPaid} {NumberOfPatients}");
         }
     }
 }

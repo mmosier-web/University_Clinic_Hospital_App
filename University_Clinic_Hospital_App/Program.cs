@@ -10,15 +10,13 @@ namespace University_Clinic_Hospital_App
 
             Console.WriteLine("University Clinic Hospital");
 
-            Console.WriteLine("\nTo check list of employees: enter \"Q\" ");
-            Console.WriteLine("To check salary of each employee: enter \"W\" ");
-            Console.WriteLine("To check duties of employee enter: \"E\" ");
+            Console.WriteLine("\nTo check all employees info press: \"Q\" ");
 
             string checkList = Console.ReadLine().ToLower();
 
             if (checkList == "q")
             {
-
+                hospital.PrintList();
             }
 
             Console.ReadKey();
