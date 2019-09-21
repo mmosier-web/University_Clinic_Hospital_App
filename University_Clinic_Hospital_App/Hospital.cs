@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace University_Clinic_Hospital_App
@@ -21,36 +22,63 @@ namespace University_Clinic_Hospital_App
 
         public void PrintEmployeeList()
         {
+            int Id = 1;
             foreach (Employee employee in employeeList)
             {
+                Console.Write(Id + " ");
                 employee.ShowInfo();
+                Id++;
             }
         }
 
-        public List<Patient> rnBetsyPatientList = new List<Patient>()
+        public Employee SelectOneEmployee()
+        {
+            Console.WriteLine("Select a Doctor: \n");
+            Employee selectedEmployee = employeeList[Convert.ToInt32(Console.ReadLine()) - 1];
+            return selectedEmployee;
+        }
+
+        public void DrawPatientsBlood(Employee selectedEmployee, Patient patient)
+        {
+            selectedEmployee.DrawBlood (patient);
+        }
+
+        static public List<Patient> rnBetsyPatientList = new List<Patient>()
         {
             new Patient ("Rubi"),
             new Patient ("Luther"),
         };
 
-        public List<Patient> rnJanePatientList = new List<Patient>()
+        static public List<Patient> rnJanePatientList = new List<Patient>()
         {
             new Patient ("Johnny"),
             new Patient ("Makenzie"),
         };
 
+        public List<Patient> allPatientsList = rnBetsyPatientList.Concat(rnJanePatientList).ToList();
 
+        public Patient SelectOnePatient()
+        {
+            Console.WriteLine("Select a Patient: \n");
+            Patient selectedPatient = allPatientsList[Convert.ToInt32(Console.ReadLine()) - 1];
+            return selectedPatient;
+        }
 
         public void PrintAllPatientsList()
         {
+            int Id = 1;
             foreach (Patient patient in rnBetsyPatientList)
             {
+                Console.Write(Id + " ");
                 patient.ShowPatientInfo();
+                Id++;
             }
 
             foreach (Patient patient in rnJanePatientList)
             {
+                Console.Write(Id + " ");
                 patient.ShowPatientInfo();
+                Id++;
             }
         }
 
