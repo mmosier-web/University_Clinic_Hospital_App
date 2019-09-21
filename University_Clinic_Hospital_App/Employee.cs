@@ -4,7 +4,7 @@ using System.Text;
 
 namespace University_Clinic_Hospital_App
 {
-    public class Employee
+    public abstract class Employee
     {
         public string Name;
         public string EmployeeNumber;
@@ -40,5 +40,11 @@ namespace University_Clinic_Hospital_App
         {
             Console.WriteLine($"{ Name}{EmployeeNumber}{Salary}{GotPaid}");
         }
+        
+        public virtual void  DrawBlood(Patient patient)
+        {
+
+        }
+
     }
 }

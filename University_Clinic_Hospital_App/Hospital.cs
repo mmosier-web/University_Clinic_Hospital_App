@@ -10,8 +10,6 @@ namespace University_Clinic_Hospital_App
         {
          new Doctor("Dr.Mosier", "322123", 90000, "Emergency medicine"),
          new Doctor("Dr.Harris", "322124", 90000, "Family medicine"),
-         new Doctor("Dr.smith", "322125", 90000, "bariatric surgery"),
-         new Doctor("Dr.houston", "322126", 90000, "Geriatric medicine"),
          new Nurse("Rn.Betsy", "222123", 50000),
          new Nurse("Rn.Jane", "222124", 50000),
          new Receptionist("Rec-BillyBob", "111123", 45000),
@@ -40,6 +38,8 @@ namespace University_Clinic_Hospital_App
             new Patient ("Johnny"),
             new Patient ("Makenzie"),
         };
+
+
 
         public void PrintAllPatientsList()
         {

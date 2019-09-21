@@ -55,7 +55,6 @@ namespace University_Clinic_Hospital_App
                 {
                     Environment.Exit(0); //Could also do---> menuLoop = false;
                 }
-
             }
         }
     }
