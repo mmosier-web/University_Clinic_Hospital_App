@@ -13,13 +13,10 @@ namespace University_Clinic_Hospital_App
             while (menuLoop)
             {
                 Console.WriteLine("University Clinic Hospital");
-
                 Console.WriteLine("\nTo check all employees info press: \"1\" ");
-
                 Console.WriteLine("To check all patients and their info press: \"2\"");
-
                 Console.WriteLine("To pay all employees press: \"3\"");
-
+                Console.WriteLine("To draw a patients blood press: \"4\"");
                 Console.WriteLine("To exit press: \"0\"");
 
                 int menuChoice = Convert.ToInt32(Console.ReadLine());
@@ -51,7 +48,17 @@ namespace University_Clinic_Hospital_App
                     }
                 }
 
-                if (menuChoice == 0)
+                else if (menuChoice == 4)
+                {
+                    Console.Clear();
+                    hospital.PrintEmployeeList();
+                    Employee selectedEmployee = hospital.SelectOneEmployee();
+                    hospital.PrintAllPatientsList();
+                    Patient selectedPatient = hospital.SelectOnePatient();
+                    hospital.DrawPatientsBlood(selectedEmployee, selectedPatient);
+                }
+
+                else if (menuChoice == 0)
                 {
                     Environment.Exit(0); //Could also do---> menuLoop = false;
                 }
