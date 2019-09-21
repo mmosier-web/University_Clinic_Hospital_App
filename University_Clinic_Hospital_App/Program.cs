@@ -17,6 +17,7 @@ namespace University_Clinic_Hospital_App
                 Console.WriteLine("To check all patients and their info press: \"2\"");
                 Console.WriteLine("To pay all employees press: \"3\"");
                 Console.WriteLine("To draw a patients blood press: \"4\"");
+                Console.WriteLine("To care for patients press: \"5\"");
                 Console.WriteLine("To exit press: \"0\"");
 
                 int menuChoice = Convert.ToInt32(Console.ReadLine());
@@ -31,13 +32,13 @@ namespace University_Clinic_Hospital_App
 
                 else if (menuChoice == 2)
                 {
+                    Console.Clear();
                     hospital.PrintAllPatientsList();
                 }
 
                 else if (menuChoice == 3)
                 {
                     Console.Clear();
-
                     int GotPaid;
                     GotPaid = hospital.PayAllEmployees();
 
@@ -56,6 +57,16 @@ namespace University_Clinic_Hospital_App
                     hospital.PrintAllPatientsList();
                     Patient selectedPatient = hospital.SelectOnePatient();
                     hospital.DrawPatientsBlood(selectedEmployee, selectedPatient);
+                }
+
+                else if (menuChoice == 5)
+                {
+                    Console.Clear();
+                    hospital.PrintEmployeeList();
+                    Employee selectedEmployee = hospital.SelectOneEmployee();
+                    hospital.PrintAllPatientsList();
+                    Patient selectedPatient = hospital.SelectOnePatient();
+                    hospital.CareForPatient(selectedEmployee, selectedPatient);
                 }
 
                 else if (menuChoice == 0)
