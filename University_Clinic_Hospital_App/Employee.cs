@@ -4,19 +4,19 @@ using System.Text;
 
 namespace University_Clinic_Hospital_App
 {
-    public class Employee
+    public abstract class Employee
     {
         public string Name;
-        public int EmployeeNumber;
+        public string EmployeeNumber;
         public int Salary;
-        public bool GotPaid;
+        public int GotPaid;
 
-        public Employee(string name, int employeeNumber, int salary)
+        public Employee(string name, string employeeNumber, int salary)
         {
             Name = name;
             EmployeeNumber = employeeNumber;
             Salary = salary;
-            GotPaid = false;
+            GotPaid = 0;
         }
 
         public Employee()
@@ -24,9 +24,27 @@ namespace University_Clinic_Hospital_App
 
         }
 
-        public int PayEmployee()
+        public virtual int PayEmployee(/*int GotPaid*/)
         {
-            return 0;
+            if (GotPaid == 0)
+            {
+               return GotPaid = 1;
+            }
+            else
+            {
+                return GotPaid = 2;
+            }
         }
+
+        public virtual void ShowInfo()
+        {
+            Console.WriteLine($"{ Name}{EmployeeNumber}{Salary}{GotPaid}");
+        }
+        
+        public virtual void  DrawBlood(Patient patient)
+        {
+
+        }
+
     }
 }
