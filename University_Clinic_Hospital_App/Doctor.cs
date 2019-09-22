@@ -17,13 +17,18 @@ namespace University_Clinic_Hospital_App
         {
 
         }
-        public override void ShowInfo()
+        public override void ShowAllInfo()
         {
             if (GotPaid == 0) 
-            Console.WriteLine($"{ Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has not been paid yet");
+            Console.WriteLine($"{Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has not been paid yet");
 
             else
-                Console.WriteLine($"{ Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has been paid");
+                Console.WriteLine($"{Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has been paid");
+        }
+
+        public override void ShowInfoForPatientAction()
+        {
+            Console.WriteLine($"Doctor: {Name} | Employee #: {EmployeeNumber} | Speciality: {Specialty}");
         }
 
         public override void DrawBlood(Patient patient)
@@ -35,8 +40,9 @@ namespace University_Clinic_Hospital_App
 
         public override void CareForPatient(Patient patient)
         {
+            patient.Blood_Level += 15;
             patient.Health_Level += 15;
-            Console.WriteLine($"{Name} Cared for {patient.Name} \n{patient.Name} Health level is now {patient.Blood_Level}");
+            Console.WriteLine($"{Name} Cared for {patient.Name} \n{patient.Name} health level is now {patient.Health_Level} and blood level {patient.Blood_Level}");
             Console.ReadKey();
         }
     }

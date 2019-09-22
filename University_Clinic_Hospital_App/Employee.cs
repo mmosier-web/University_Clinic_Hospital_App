@@ -36,9 +36,14 @@ namespace University_Clinic_Hospital_App
             }
         }
 
-        public virtual void ShowInfo()
+        public virtual void ShowAllInfo()
         {
             Console.WriteLine($"{ Name}{EmployeeNumber}{Salary}{GotPaid}");
+        }
+
+        public virtual void ShowInfoForPatientAction()
+        {
+
         }
         
         public virtual void DrawBlood(Patient patient)

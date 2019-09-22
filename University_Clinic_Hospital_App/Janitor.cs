@@ -11,7 +11,7 @@ namespace University_Clinic_Hospital_App
         {
             FloorSweeping = false;
         }
-        public override void ShowInfo()
+        public override void ShowAllInfo()
         {
 
             if (GotPaid == 0 && FloorSweeping == false)

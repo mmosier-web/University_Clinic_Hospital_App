@@ -12,7 +12,7 @@ namespace University_Clinic_Hospital_App
         {
             OnThePhone = false;
         }
-        public override void ShowInfo()
+        public override void ShowAllInfo()
         {
   
            if (GotPaid == 0 && OnThePhone ==false)

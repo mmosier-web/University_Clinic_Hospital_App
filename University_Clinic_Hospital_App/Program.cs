@@ -12,47 +12,71 @@ namespace University_Clinic_Hospital_App
 
             while (menuLoop)
             {
-                Console.WriteLine("University Clinic Hospital");
-                Console.WriteLine("\nTo check all employees info press: \"1\" ");
-                Console.WriteLine("To check all patients and their info press: \"2\"");
-                Console.WriteLine("To pay all employees press: \"3\"");
-                Console.WriteLine("To draw a patients blood press: \"4\"");
-                Console.WriteLine("To care for patients press: \"5\"");
-                Console.WriteLine("To exit press: \"0\"");
+                Console.WriteLine("\t\tUniversity Clinic Hospital");
+
+                Console.WriteLine("\n---------------------------------");
+                Console.WriteLine("Employee Window:");
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine("\n\t\tList of Employees: | Press - 1 | ");
+                Console.WriteLine("\n\t\tPay Employees:     | Press - 2 |");
+
+                Console.WriteLine("\n---------------------------------");
+                Console.WriteLine("Patient Window:");
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine("\n\t\tPatient Info:      | Press - 3 |");
+                Console.WriteLine("\n\t\tDraw  Blood:       | Press - 4 |");
+                Console.WriteLine("\n\t\tCare For Patients: | Press - 5 |");
+                Console.WriteLine("\n| Exit: Press - 0 |");
 
                 int menuChoice = Convert.ToInt32(Console.ReadLine());
 
                 if (menuChoice == 1)
                 {
                     Console.Clear();
-                    Console.WriteLine("Employee Info:");
+                    Console.WriteLine("\n\nEmployee Info:");
                     Console.WriteLine("___________________________________________________________________________________________________________________");
                     hospital.PrintEmployeeList();
+                    Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
+                    Console.ReadKey();
+                    Console.Clear();
+
                 }
 
                 else if (menuChoice == 2)
                 {
                     Console.Clear();
-                    hospital.PrintAllPatientsList();
-                }
-
-                else if (menuChoice == 3)
-                {
-                    Console.Clear();
                     int GotPaid;
                     GotPaid = hospital.PayAllEmployees();
+                    hospital.PrintEmployeeList();
+                    Console.WriteLine("\nYour Employees have been Paid  \n\nPress any key to go back to 'Main Menu'");
+                    Console.ReadKey();
+                    Console.Clear();
+
 
                     if (GotPaid == 2)
                     {
                         Console.Clear();
-                        Console.WriteLine("Already paied");
+                        Console.WriteLine("You have already paid your employees. \n\nPress any key to go back to 'Main Menu'");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
+                }
+                
+                else if (menuChoice == 3)
+                {
+                    Console.Clear();
+                    Console.WriteLine("\nPatient Info Info:");
+                    Console.WriteLine("____________________________________________________");
+                    hospital.PrintAllPatientsList();
+                    Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
 
                 else if (menuChoice == 4)
                 {
                     Console.Clear();
-                    hospital.PrintEmployeeList();
+                    hospital.PrintAllMedicalEmployees();
                     Employee selectedEmployee = hospital.SelectOneEmployee();
                     hospital.PrintAllPatientsList();
                     Patient selectedPatient = hospital.SelectOnePatient();
@@ -62,11 +86,11 @@ namespace University_Clinic_Hospital_App
                 else if (menuChoice == 5)
                 {
                     Console.Clear();
-                    hospital.PrintEmployeeList();
+                    hospital.PrintAllMedicalEmployees();
                     Employee selectedEmployee = hospital.SelectOneEmployee();
                     hospital.PrintAllPatientsList();
-                    Patient selectedPatient = hospital.SelectOnePatient();
-                    hospital.CareForPatient(selectedEmployee, selectedPatient);
+                    Patient selectedPatientToCareFor = hospital.SelectOnePatient();
+                    hospital.CareForPatient(selectedEmployee, selectedPatientToCareFor);
                 }
 
                 else if (menuChoice == 0)
