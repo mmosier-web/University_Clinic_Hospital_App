@@ -38,9 +38,14 @@ namespace University_Clinic_Hospital_App
             return selectedEmployee;
         }
 
-        public void DrawPatientsBlood(Employee selectedEmployee, Patient patient)
+        public void DrawPatientsBlood(Employee selectedEmployee, Patient selectedPatient)
         {
-            selectedEmployee.DrawBlood (patient);
+            selectedEmployee.DrawBlood (selectedPatient);
+        }
+
+        public void CareForPatient(Employee selectedEmployee, Patient selectedPatient)
+        {
+            selectedEmployee.CareForPatient(selectedPatient);
         }
 
         static public List<Patient> rnBetsyPatientList = new List<Patient>()

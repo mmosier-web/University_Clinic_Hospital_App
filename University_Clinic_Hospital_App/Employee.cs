@@ -41,7 +41,12 @@ namespace University_Clinic_Hospital_App
             Console.WriteLine($"{ Name}{EmployeeNumber}{Salary}{GotPaid}");
         }
         
-        public virtual void  DrawBlood(Patient patient)
+        public virtual void DrawBlood(Patient patient)
+        {
+
+        }
+
+        public virtual void CareForPatient(Patient patient)
         {
 
         }
