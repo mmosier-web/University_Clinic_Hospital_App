@@ -19,7 +19,8 @@ namespace University_Clinic_Hospital_App
         }
         public void ShowPatientInfo()
         {
-            Console.WriteLine($"{Name}, Blood Level:{Blood_Level}, Health Level: {Health_Level}");
+            Console.WriteLine($"Name: {Name} | Blood Level:{Blood_Level} | Health Level: {Health_Level}");
+            Console.WriteLine("____________________________________________________");
         }
     }
 }

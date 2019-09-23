@@ -10,68 +10,107 @@ namespace University_Clinic_Hospital_App
 
             bool menuLoop = true;
 
-            while (menuLoop)
-            {
-                Console.WriteLine("University Clinic Hospital");
-                Console.WriteLine("\nTo check all employees info press: \"1\" ");
-                Console.WriteLine("To check all patients and their info press: \"2\"");
-                Console.WriteLine("To pay all employees press: \"3\"");
-                Console.WriteLine("To draw a patients blood press: \"4\"");
-                Console.WriteLine("To care for patients press: \"5\"");
-                Console.WriteLine("To exit press: \"0\"");
-
-                int menuChoice = Convert.ToInt32(Console.ReadLine());
-
-                if (menuChoice == 1)
+                while (menuLoop)
                 {
-                    Console.Clear();
-                    Console.WriteLine("Employee Info:");
-                    Console.WriteLine("___________________________________________________________________________________________________________________");
-                    hospital.PrintEmployeeList();
-                }
+                    Console.WriteLine("\n\n\t\tUniversity Clinic Hospital");
 
-                else if (menuChoice == 2)
+                    Console.WriteLine("\n---------------------------------");
+                    Console.WriteLine("Employee Menu:");
+                    Console.WriteLine("---------------------------------");
+                    Console.WriteLine("\n\t\tList of Employees: | Press - 1 | ");
+                    Console.WriteLine("\n\t\tPay Employees:     | Press - 2 |");
+
+                    Console.WriteLine("\n---------------------------------");
+                    Console.WriteLine("Patient Menu:");
+                    Console.WriteLine("---------------------------------");
+                    Console.WriteLine("\n\t\tPatient Info:      | Press - 3 |");
+                    Console.WriteLine("\n\t\tDraw Blood:        | Press - 4 |");
+                    Console.WriteLine("\n\t\tCare For Patients: | Press - 5 |");
+                    Console.WriteLine("\n| Exit: Press - 0 |");
+
+                int menuChoice;
+
+                if (int.TryParse(Console.ReadLine(), out menuChoice))
                 {
-                    Console.Clear();
-                    hospital.PrintAllPatientsList();
-                }
-
-                else if (menuChoice == 3)
-                {
-                    Console.Clear();
-                    int GotPaid;
-                    GotPaid = hospital.PayAllEmployees();
-
-                    if (GotPaid == 2)
+                    if (menuChoice == 1)
                     {
                         Console.Clear();
-                        Console.WriteLine("Already paied");
+                        Console.WriteLine("\n\nEmployee Info:");
+                        Console.WriteLine("________________________________________________________________________________________________________________________");
+                        hospital.PrintEmployeeList();
+                        Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
+                        Console.ReadKey();
+                        Console.Clear();
+
+                    }
+
+                    else if (menuChoice == 2)
+                    {
+                        Console.Clear();
+                        hospital.PayAllEmployees();
+                        Console.WriteLine("_____________________________________________");
+                        Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                    else if (menuChoice == 3)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("\nPatient Info:");
+                        Console.WriteLine("____________________________________________________");
+                        hospital.PrintAllPatientsList();
+                        Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+
+                    else if (menuChoice == 4)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("\n\nMedical Employees:");
+                        Console.WriteLine("______________________________________________________________________");
+                        hospital.PrintAllMedicalEmployees();
+                        Employee selectedEmployee = hospital.SelectOneEmployee();
+                        Console.WriteLine("\n\nPatient Info:");
+                        Console.WriteLine("____________________________________________________");
+                        hospital.PrintAllPatientsList();
+                        Patient selectedPatient = hospital.SelectOnePatient();
+                        hospital.DrawPatientsBlood(selectedEmployee, selectedPatient);
+                    }
+
+                    else if (menuChoice == 5)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("\n\nMedical Employees:");
+                        Console.WriteLine("______________________________________________________________________");
+                        hospital.PrintAllMedicalEmployees();
+                        Employee selectedEmployee = hospital.SelectOneEmployee();
+                        Console.WriteLine("\n\nPatient Info:");
+                        Console.WriteLine("____________________________________________________");
+                        hospital.PrintAllPatientsList();
+                        Patient selectedPatientToCareFor = hospital.SelectOnePatient();
+                        hospital.CareForPatient(selectedEmployee, selectedPatientToCareFor);
+                    }
+
+
+                    else if (menuChoice == 0)
+                    {
+                        Environment.Exit(0); //Could also do---> menuLoop = false;
+                    }
+
+                    else if (menuChoice != 1)
+                    {
+                        Console.WriteLine("\nNot a valid menu choice  \nPlese enter a valid menu choice");
+                        Console.ReadKey();
+                        Console.Clear();
                     }
                 }
-
-                else if (menuChoice == 4)
+                else
                 {
+                    Console.WriteLine("\nNot a valid menu choice  \nPlese enter a menu choice listed above");
+                    Console.ReadKey();
                     Console.Clear();
-                    hospital.PrintEmployeeList();
-                    Employee selectedEmployee = hospital.SelectOneEmployee();
-                    hospital.PrintAllPatientsList();
-                    Patient selectedPatient = hospital.SelectOnePatient();
-                    hospital.DrawPatientsBlood(selectedEmployee, selectedPatient);
-                }
-
-                else if (menuChoice == 5)
-                {
-                    Console.Clear();
-                    hospital.PrintEmployeeList();
-                    Employee selectedEmployee = hospital.SelectOneEmployee();
-                    hospital.PrintAllPatientsList();
-                    Patient selectedPatient = hospital.SelectOnePatient();
-                    hospital.CareForPatient(selectedEmployee, selectedPatient);
-                }
-
-                else if (menuChoice == 0)
-                {
-                    Environment.Exit(0); //Could also do---> menuLoop = false;
                 }
             }
         }
