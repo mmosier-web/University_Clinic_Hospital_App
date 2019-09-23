@@ -12,23 +12,23 @@ namespace University_Clinic_Hospital_App
 
                 while (menuLoop)
                 {
-                    Console.WriteLine("\t\tUniversity Clinic Hospital");
+                    Console.WriteLine("\n\n\t\tUniversity Clinic Hospital");
 
                     Console.WriteLine("\n---------------------------------");
-                    Console.WriteLine("Employee Window:");
+                    Console.WriteLine("Employee Menu:");
                     Console.WriteLine("---------------------------------");
                     Console.WriteLine("\n\t\tList of Employees: | Press - 1 | ");
                     Console.WriteLine("\n\t\tPay Employees:     | Press - 2 |");
 
                     Console.WriteLine("\n---------------------------------");
-                    Console.WriteLine("Patient Window:");
+                    Console.WriteLine("Patient Menu:");
                     Console.WriteLine("---------------------------------");
                     Console.WriteLine("\n\t\tPatient Info:      | Press - 3 |");
                     Console.WriteLine("\n\t\tDraw Blood:        | Press - 4 |");
                     Console.WriteLine("\n\t\tCare For Patients: | Press - 5 |");
                     Console.WriteLine("\n| Exit: Press - 0 |");
 
-                int menuChoice; /*= Convert.ToInt32(Console.ReadLine());*/
+                int menuChoice;
 
                 if (int.TryParse(Console.ReadLine(), out menuChoice))
                 {
@@ -36,7 +36,7 @@ namespace University_Clinic_Hospital_App
                     {
                         Console.Clear();
                         Console.WriteLine("\n\nEmployee Info:");
-                        Console.WriteLine("___________________________________________________________________________________________________________________");
+                        Console.WriteLine("________________________________________________________________________________________________________________________");
                         hospital.PrintEmployeeList();
                         Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
                         Console.ReadKey();
@@ -47,27 +47,17 @@ namespace University_Clinic_Hospital_App
                     else if (menuChoice == 2)
                     {
                         Console.Clear();
-                        int GotPaid;
-                        GotPaid = hospital.PayAllEmployees();
-                        hospital.PrintEmployeeList();
-                        Console.WriteLine("\nYour Employees have been Paid  \n\nPress any key to go back to 'Main Menu'");
+                        hospital.PayAllEmployees();
+                        Console.WriteLine("_____________________________________________");
+                        Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
                         Console.ReadKey();
                         Console.Clear();
-
-
-                        if (GotPaid == 2)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("You have already paid your employees. \n\nPress any key to go back to 'Main Menu'");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
                     }
 
                     else if (menuChoice == 3)
                     {
                         Console.Clear();
-                        Console.WriteLine("\nPatient Info Info:");
+                        Console.WriteLine("\nPatient Info:");
                         Console.WriteLine("____________________________________________________");
                         hospital.PrintAllPatientsList();
                         Console.WriteLine("\n\nPress any key to go back to 'Main Menu'");
@@ -78,8 +68,12 @@ namespace University_Clinic_Hospital_App
                     else if (menuChoice == 4)
                     {
                         Console.Clear();
+                        Console.WriteLine("\n\nMedical Employees:");
+                        Console.WriteLine("______________________________________________________________________");
                         hospital.PrintAllMedicalEmployees();
                         Employee selectedEmployee = hospital.SelectOneEmployee();
+                        Console.WriteLine("\n\nPatient Info:");
+                        Console.WriteLine("____________________________________________________");
                         hospital.PrintAllPatientsList();
                         Patient selectedPatient = hospital.SelectOnePatient();
                         hospital.DrawPatientsBlood(selectedEmployee, selectedPatient);
@@ -88,8 +82,12 @@ namespace University_Clinic_Hospital_App
                     else if (menuChoice == 5)
                     {
                         Console.Clear();
+                        Console.WriteLine("\n\nMedical Employees:");
+                        Console.WriteLine("______________________________________________________________________");
                         hospital.PrintAllMedicalEmployees();
                         Employee selectedEmployee = hospital.SelectOneEmployee();
+                        Console.WriteLine("\n\nPatient Info:");
+                        Console.WriteLine("____________________________________________________");
                         hospital.PrintAllPatientsList();
                         Patient selectedPatientToCareFor = hospital.SelectOnePatient();
                         hospital.CareForPatient(selectedEmployee, selectedPatientToCareFor);
@@ -110,7 +108,7 @@ namespace University_Clinic_Hospital_App
                 }
                 else
                 {
-                    Console.WriteLine("\nNot a valid menu choice  \nPlese enter a valid menu choice");
+                    Console.WriteLine("\nNot a valid menu choice  \nPlese enter a menu choice listed above");
                     Console.ReadKey();
                     Console.Clear();
                 }

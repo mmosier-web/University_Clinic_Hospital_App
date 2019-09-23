@@ -9,18 +9,18 @@ namespace University_Clinic_Hospital_App
     {
         static public List<Employee> medicalEmployees = new List<Employee>()
         {
-         new Doctor("Mosier", "322123", 90000, "Emergency medicine"),
-         new Doctor("Harris", "322124", 90000, "Family medicine"),
-         new Nurse("Betsy", "222123", 50000),
-         new Nurse("Jane", "222124", 50000),
+         new Doctor("Mosier", "322123","Doctor", 90000, "Emergency medicine"),
+         new Doctor("Harris", "322124","Doctor", 90000, "Family medicine"),
+         new Nurse("Betsy", "222123","Nurse", 50000),
+         new Nurse("Jane", "222124","Nurse", 50000),
         };
 
         static public List<Employee> nonMedicalEmployees = new List<Employee>()
         {
-         new Receptionist("Rec-BillyBob", "111123", 45000),
-         new Receptionist("Rec-John", "111124", 45000),
-         new Janitor("Earl the Janitor", "000123", 40000),
-         new Janitor("Joe the Janitor", "000124", 40000)
+         new Receptionist("Billy", "111123","Receptionist", 45000),
+         new Receptionist("John", "111124","Receptionist", 45000),
+         new Janitor("Earl", "000123","Janitor", 40000),
+         new Janitor("Joe", "000124","Janitor", 40000)
         };
 
         public List<Employee> allHospitalEmployees = medicalEmployees.Concat(nonMedicalEmployees).ToList();
@@ -52,6 +52,7 @@ namespace University_Clinic_Hospital_App
         {
             Console.WriteLine("\n\nSelect a Medical Employee: \n");
             Employee selectedEmployee = allHospitalEmployees[Convert.ToInt32(Console.ReadLine()) - 1];
+            Console.Clear();
             return selectedEmployee;
         }
 
@@ -81,7 +82,7 @@ namespace University_Clinic_Hospital_App
 
         public Patient SelectOnePatient()
         {
-            Console.WriteLine("Select a Patient: \n");
+            Console.WriteLine("\n\nSelect a Patient: \n");
             Patient selectedPatient = allPatientsList[Convert.ToInt32(Console.ReadLine()) - 1];
             return selectedPatient;
         }
@@ -104,22 +105,13 @@ namespace University_Clinic_Hospital_App
             }
         }
 
-        public int PayAllEmployees()
+        public void PayAllEmployees()
         {
             foreach (Employee employee in allHospitalEmployees)
             {
-                int GotPaid = employee.GotPaid;
-
-                if (GotPaid == 0)
-                { 
-                    return employee.PayEmployee();
-                }
-                else if (GotPaid == 1)
-                {
-                    return 2;
-                }
+                employee.PayEmployee();
             }
-            return 2;
         }
+
     }
 }
