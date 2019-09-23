@@ -20,10 +20,10 @@ namespace University_Clinic_Hospital_App
         public override void ShowAllInfo()
         {
             if (GotPaid == 0) 
-            Console.WriteLine($"{Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has not been paid yet");
+            Console.WriteLine($"Doctor: {Name} | Employee #:{EmployeeNumber} | Salary:{Salary} | Specialty: {Specialty} | Payroll: Not Paid");
 
             else
-                Console.WriteLine($"{Name}, Employee Number;{EmployeeNumber}, Employee Salary:{Salary},{Specialty}, Has been paid");
+            Console.WriteLine($"Doctor: {Name} | Employee #:{EmployeeNumber} | Salary:{Salary} | Specialty: {Specialty} | Payroll: Paid");
         }
 
         public override void ShowInfoForPatientAction()

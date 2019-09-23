@@ -9,10 +9,10 @@ namespace University_Clinic_Hospital_App
     {
         static public List<Employee> medicalEmployees = new List<Employee>()
         {
-         new Doctor("Dr.Mosier", "322123", 90000, "Emergency medicine"),
-         new Doctor("Dr.Harris", "322124", 90000, "Family medicine"),
-         new Nurse("Rn.Betsy", "222123", 50000),
-         new Nurse("Rn.Jane", "222124", 50000),
+         new Doctor("Mosier", "322123", 90000, "Emergency medicine"),
+         new Doctor("Harris", "322124", 90000, "Family medicine"),
+         new Nurse("Betsy", "222123", 50000),
+         new Nurse("Jane", "222124", 50000),
         };
 
         static public List<Employee> nonMedicalEmployees = new List<Employee>()
@@ -50,7 +50,7 @@ namespace University_Clinic_Hospital_App
 
         public Employee SelectOneEmployee()
         {
-            Console.WriteLine("Select a Doctor: \n");
+            Console.WriteLine("\n\nSelect a Medical Employee: \n");
             Employee selectedEmployee = allHospitalEmployees[Convert.ToInt32(Console.ReadLine()) - 1];
             return selectedEmployee;
         }
@@ -111,9 +111,8 @@ namespace University_Clinic_Hospital_App
                 int GotPaid = employee.GotPaid;
 
                 if (GotPaid == 0)
-                { //int GotPaid;
-                    return employee.PayEmployee(/*GotPaid*/);
-                    //int GotPaid = employee.PayEmployee();
+                { 
+                    return employee.PayEmployee();
                 }
                 else if (GotPaid == 1)
                 {
@@ -122,14 +121,5 @@ namespace University_Clinic_Hospital_App
             }
             return 2;
         }
-
-        public void CheckPayStatus()
-        {
-            foreach(Employee employee in allHospitalEmployees)
-            {
-
-            }
-        }
-
     }
 }

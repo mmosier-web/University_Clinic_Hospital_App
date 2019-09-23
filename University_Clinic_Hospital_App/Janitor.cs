@@ -24,7 +24,7 @@ namespace University_Clinic_Hospital_App
                 Console.WriteLine($"{ Name }, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has been paid, Has swept the floor");
 
             else if (GotPaid == 0 && FloorSweeping == true)
-                Console.WriteLine($"{ Name }, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, is sweping the floor");
+                Console.WriteLine($"Name: { Name } | Employee #: {EmployeeNumber} | Salary: {Salary} | Has not been paid, is sweping the floor");
         }
     }
 }

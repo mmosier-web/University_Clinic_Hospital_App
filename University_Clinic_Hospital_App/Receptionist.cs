@@ -16,17 +16,16 @@ namespace University_Clinic_Hospital_App
         {
   
            if (GotPaid == 0 && OnThePhone ==false)
-                Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, is not on the phone");
+                Console.WriteLine($"Name:{Name} | Employee #: {EmployeeNumber} | Salary: {Salary} | Taking A Call: No | Payroll: Not Paid");
 
            else if(GotPaid == 1 && OnThePhone == true)
-                Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary} ,Has been paid, is on the phone");
+                Console.WriteLine($"Name: {Name} | Employee #: {EmployeeNumber} | Salary: {Salary} | Taking A Call: Yes | Payroll: Paid");
 
            else if(GotPaid == 0 && OnThePhone == true)
-                Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has not been paid, is on the phone");
+                Console.WriteLine($"Name: {Name} | Employee #: {EmployeeNumber} | Salary: {Salary} | Taking A Call: Yes | Payroll: Not Paid ");
 
            else if (GotPaid == 1 && OnThePhone == false)
-                Console.WriteLine($"{ Name}, Employee Number: {EmployeeNumber}, Employee Salary: {Salary}, Has been paid, is not on the phone");
-
+                Console.WriteLine($"Name: {Name} | Employee #: {EmployeeNumber} | Salary: {Salary} | Taking A Call: No | Payroll: Paid");
         }
     }
 }

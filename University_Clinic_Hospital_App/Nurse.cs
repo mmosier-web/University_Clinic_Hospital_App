@@ -12,14 +12,14 @@ namespace University_Clinic_Hospital_App
         {
             NumberOfPatients = 2;
         }
+
         public override void ShowAllInfo()
         {
-
             if (GotPaid == 0)
-                Console.WriteLine($"{ Name} Employee Number: {EmployeeNumber} Employee Salary:{Salary}, number of patients:{NumberOfPatients}, Has been paid");
+                Console.WriteLine($"Name: {Name} | Employee #: {EmployeeNumber} | Salary: {Salary} | # of Patients: {NumberOfPatients} | Payroll: Not Paid");
 
             else
-                Console.WriteLine($"{ Name} Employee Number: {EmployeeNumber} Employee Salary:{Salary}, number of patients:{NumberOfPatients}, Has not been paid");
+                Console.WriteLine($"Name: {Name} | Employee #: {EmployeeNumber} | Salary: {Salary} | # of Patients: {NumberOfPatients} | Payroll: Paid");
         }
 
         public override void ShowInfoForPatientAction()

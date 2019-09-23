@@ -24,7 +24,7 @@ namespace University_Clinic_Hospital_App
                     Console.WriteLine("Patient Window:");
                     Console.WriteLine("---------------------------------");
                     Console.WriteLine("\n\t\tPatient Info:      | Press - 3 |");
-                    Console.WriteLine("\n\t\tDraw  Blood:       | Press - 4 |");
+                    Console.WriteLine("\n\t\tDraw Blood:        | Press - 4 |");
                     Console.WriteLine("\n\t\tCare For Patients: | Press - 5 |");
                     Console.WriteLine("\n| Exit: Press - 0 |");
 
@@ -103,18 +103,17 @@ namespace University_Clinic_Hospital_App
 
                     else if (menuChoice != 1)
                     {
-                        Console.WriteLine("\nNot a valid menu choise  \nPlese enter a valid menu choice");
+                        Console.WriteLine("\nNot a valid menu choice  \nPlese enter a valid menu choice");
                         Console.ReadKey();
                         Console.Clear();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\nNot a valid menu choise  \nPlese enter a valid menu choice");
+                    Console.WriteLine("\nNot a valid menu choice  \nPlese enter a valid menu choice");
                     Console.ReadKey();
                     Console.Clear();
                 }
-
             }
         }
     }
